@@ -1,5 +1,5 @@
 <script setup>
-import { darkTheme, NGlobalStyle, zhCN } from 'naive-ui'
+import { darkTheme, NGlobalStyle, zhCN, enUS } from 'naive-ui'
 import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useGlobalState } from './store'
@@ -13,7 +13,8 @@ const {
 } = useGlobalState()
 const { locale } = useI18n({});
 const theme = computed(() => isDark.value ? darkTheme : null)
-const localeConfig = computed(() => locale.value == 'zh' ? zhCN : null)
+// const localeConfig = computed(() => locale.value == 'zh' ? zhCN : null)
+const localeConfig = computed(() => locale.value == 'en' ? enUS : null)
 const isMobile = useIsMobile()
 const showSideMargin = computed(() => !isMobile.value && useSideMargin.value);
 

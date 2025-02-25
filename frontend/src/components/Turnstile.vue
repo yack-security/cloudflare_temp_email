@@ -41,7 +41,8 @@ const checkCfTurnstile = async (remove) => {
             "#cf-turnstile",
             {
                 sitekey: openSettings.value.cfTurnstileSiteKey,
-                language: locale.value == 'zh' ? 'zh-CN' : 'en-US',
+                // language: locale.value == 'zh' ? 'zh-CN' : 'en-US',
+                language: locale.value == 'en' ? 'en-US' : 'zh-CN',
                 theme: isDark.value ? 'dark' : 'light',
                 callback: function (token) {
                     cfToken.value = token;
