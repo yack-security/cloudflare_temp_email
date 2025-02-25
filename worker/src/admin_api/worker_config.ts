@@ -21,6 +21,7 @@ export default {
             "MAX_ADDRESS_LEN": getIntValue(c.env.MAX_ADDRESS_LEN, 30),
 
             "FORWARD_ADDRESS_LIST": getStringArray(c.env.FORWARD_ADDRESS_LIST),
+            "CAN_VIEW_ALL_DOMAINS": getBooleanValue(c.env.CAN_VIEW_ALL_DOMAINS),
             "DEFAULT_DOMAINS": getDefaultDomains(c),
             "DOMAINS": getDomains(c),
             "DOMAIN_LABELS": getStringArray(c.env.DOMAIN_LABELS),

@@ -19,12 +19,12 @@ const showDelteAccount = ref(false)
 const { locale, t } = useI18n({
     messages: {
         en: {
-            logout: "Logout",
-            delteAccount: "Delete Account",
+            logout: "Logout from Mail Account",
+            delteAccount: "Delete Mail Account",
             showAddressCredential: 'Show Address Credential',
-            logoutConfirm: 'Are you sure to logout?',
-            delteAccount: "Delete Account",
-            delteAccountConfirm: "Are you sure to delete your account and all emails for this account?",
+            logoutConfirm: 'Are you sure to logout from mail account?',
+            delteAccount: "Delete Mail Account",
+            delteAccountConfirm: "Are you sure to delete your mail account and all emails for this account?",
         },
         zh: {
             logout: '退出登录',

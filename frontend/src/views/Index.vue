@@ -27,7 +27,7 @@ const { t } = useI18n({
       sendbox: 'Send Box',
       sendmail: 'Send Mail',
       auto_reply: 'Auto Reply',
-      accountSettings: 'Account Settings',
+      accountSettings: 'Mail Account Settings',
       about: 'About',
       s3Attachment: 'S3 Attachment',
       saveToS3Success: 'save to s3 success',

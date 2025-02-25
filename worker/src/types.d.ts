@@ -79,6 +79,8 @@ export type Bindings = {
 
     // webhook config
     FRONTEND_URL: string | undefined
+
+    CAN_VIEW_ALL_DOMAINS: string | boolean | undefined
 }
 
 type JwtPayload = {

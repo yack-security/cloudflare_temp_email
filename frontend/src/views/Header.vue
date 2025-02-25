@@ -54,7 +54,7 @@ const changeLocale = async (lang) => {
 const { locale, t } = useI18n({
     messages: {
         en: {
-            title: 'Cloudflare Temp Email',
+            title: 'Yack Temp Email',
             // dark: 'Dark',
             // light: 'Light',
             dark: '',
@@ -215,20 +215,21 @@ useHead({
 
 const logoClickCount = ref(0);
 const logoClick = async () => {
-    if (route.path.includes("admin")) {
-        logoClickCount.value = 0;
-        return;
-    }
-    if (logoClickCount.value >= 5) {
-        logoClickCount.value = 0;
-        message.info("Change to admin Page");
-        await router.push(getRouterPathWithLang('/admin', locale.value));
-    } else {
-        logoClickCount.value++;
-    }
-    if (logoClickCount.value > 0) {
-        message.info(`Click ${5 - logoClickCount.value + 1} times to enter the admin page`);
-    }
+    await router.push(getRouterPathWithLang('/', locale.value));
+    // if (route.path.includes("admin")) {
+    //     logoClickCount.value = 0;
+    //     return;
+    // }
+    // if (logoClickCount.value >= 5) {
+    //     logoClickCount.value = 0;
+    //     message.info("Change to admin Page");
+    //     await router.push(getRouterPathWithLang('/admin', locale.value));
+    // } else {
+    //     logoClickCount.value++;
+    // }
+    // if (logoClickCount.value > 0) {
+    //     message.info(`Click ${5 - logoClickCount.value + 1} times to enter the admin page`);
+    // }
 }
 
 onMounted(async () => {
@@ -241,12 +242,12 @@ onMounted(async () => {
 <template>
     <div>
         <n-page-header>
-            <template #title>
+            <!-- <template #title>
                 <h3>{{ openSettings.title || t('title') }}</h3>
-            </template>
+            </template> -->
             <template #avatar>
                 <div @click="logoClick">
-                    <n-avatar style="margin-left: 10px;" src="/logo.png" />
+                    <img src="/Yack_LogoOriginalSlogan-Mauve.svg" alt="Yack Logo" style="height: 60px;margin-top: 10px;">
                 </div>
             </template>
             <template #extra>
