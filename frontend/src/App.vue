@@ -34,7 +34,18 @@ onMounted(async () => {
     const script = document.createElement('script');
     script.defer = true;
     script.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-    script.dataset.cfBeacon = `{ token: ${token} }`;
+    script.dataset.cfBeacon = JSON.stringify({ token: token });
+    document.body.appendChild(script);
+  }
+
+  // Add Counterscale tracking
+  const counterscaleExists = document.querySelector('#counterscale-script') !== null;
+  if (!counterscaleExists) {
+    const script = document.createElement('script');
+    script.id = 'counterscale-script';
+    script.defer = true;
+    script.dataset.siteId = 'temp-mail.yack.one';
+    script.src = 'https://track.yack.one/tracker.js';
     document.body.appendChild(script);
   }
 
