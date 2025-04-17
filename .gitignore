@@ -3,6 +3,11 @@ worker/pentest-worker-mailer-config.json
 dist/
 test/
 .vscode/
+worker/smtp_config.json
+test.js
+test_smtp.py
+test_imap.py
+
 # Logs
 logs
 *.log

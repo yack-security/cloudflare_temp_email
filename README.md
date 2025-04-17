@@ -62,3 +62,25 @@ async function send_email(from_name, to_name, to_mail, subject, content) {
 
 send_email("MyName", "YourName", "your_email@gmail.com", "Subject", "Content")
 ```
+
+## SendEmail with SMTP
+
+```python
+import smtplib
+
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+
+with smtplib.SMTP("smtp.pentestyack.work", 8025) as smtp:
+    smtp.login(
+        "jwt",
+        "<account_jwt>",
+    )
+    message = MIMEMultipart()
+    message["From"] = "Me <account_email@example.com>"
+    message["To"] = "John <johndoe@gmail.com>"
+    message["Subject"] = "Testing"
+    message.attach(MIMEText("Testing", "html"))
+    smtp.sendmail("account_email@example.com", "johndoe@gmail.com", message.as_string())
+```
